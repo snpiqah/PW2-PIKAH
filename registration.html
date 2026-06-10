@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration - POLYCC Mega 2026</title>
-
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Karnival POLYCC Mega 2026</title>
+    
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css" />
+    <script src="jquery.js"></script>
+    <script src="jquery.mobile-1.4.5.min.js"></script>
+    
+    <script src="script.js"></script>
 </head>
 <body>
 
-    <div data-role="page" id="registrationPage">
+    <div data-role="page" id="registration-page">
 
-        <div data-role="header" data-theme="b">
+        <div data-role="header">
             <h1>Karnival POLYCC ...</h1>
             <div data-role="navbar">
                 <ul>
@@ -29,65 +31,51 @@
             <h2>Borang Pendaftaran</h2>
             
             <form id="regForm">
-                
                 <div class="ui-field-contain">
-                    <label for="nama">Nama:</label>
-                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama penuh" required>
+                    <label for="txt-nama">Nama:</label>
+                    <input type="text" name="txt-nama" id="txt-nama" placeholder="Masukkan nama penuh">
                 </div>
 
                 <div class="ui-field-contain">
-                    <label for="umur">Umur:</label>
-                    <input type="number" id="umur" name="umur" placeholder="Masukkan umur anda" required>
+                    <label for="txt-umur">Umur: <span style="color:red;">*</span></label>
+                    <input type="number" name="txt-umur" id="txt-umur" placeholder="Masukkan umur anda">
                 </div>
 
                 <div class="ui-field-contain">
-                    <label for="tarikhLahir">Tarikh Lahir:</label>
-                    <input type="date" id="tarikhLahir" name="tarikhLahir">
+                    <label for="txt-tarikh">Tarikh Lahir:</label>
+                    <input type="date" name="txt-tarikh" id="txt-tarikh">
                 </div>
 
                 <div class="ui-field-contain">
-                    <label for="sukan" class="select">Pilih Pertandingan:</label>
-                    <select id="sukan" name="sukan">
-                        <option value="ai_robotics" selected>AI Robotics Competition</option>
+                    <label for="select-competition" class="select">Pilihan Pertandingan:</label>
+                    <select name="select-competition" id="select-competition">
+                        <option value="robotics">AI Robotics Competition</option>
                         <option value="drone">Drone Competition</option>
-                        <option value="code_design">Code Design Competition</option>
                         <option value="cooking">Cooking Competition</option>
-                        <option value="3d_art">3D Sketch / 3D Art Competition</option>
+                        <option value="coding">Code Design Competition</option>
+                        <option value="3d-art">3D Sketch / 3D Art Competition</option>
                     </select>
                 </div>
 
                 <div class="ui-field-contain">
                     <fieldset data-role="controlgroup">
                         <legend>Jantina:</legend>
-                        <input type="radio" name="jantina" id="jantina-lelaki" value="Lelaki" checked="checked">
-                        <label for="jantina-lelaki">Lelaki</label>
-                        
-                        <input type="radio" name="jantina" id="jantina-perempuan" value="Perempuan">
-                        <label for="jantina-perempuan">Perempuan</label>
+                        <input type="radio" name="radio-jantina" id="radio-lelaki" value="Lelaki" checked="checked">
+                        <label data-iconpos="left" for="radio-lelaki">Lelaki</label>
+                        <input type="radio" name="radio-jantina" id="radio-perempuan" value="Perempuan">
+                        <label data-iconpos="left" for="radio-perempuan">Perempuan</label>
                     </fieldset>
                 </div>
 
-                <button type="submit" id="btnHantar" class="ui-btn ui-corner-all ui-shadow">Hantar</button>
+                <button type="button" id="btn-hantar" class="ui-btn ui-corner-all ui-shadow">Hantar</button>
             </form>
         </div>
 
-        <div data-role="footer" data-position="fixed" data-theme="b">
-            <h4>Komuniti Pembangun Website PTSS</h4>
-        </div>
-
-        <div data-role="popup" id="agePopup" data-overlay-theme="b" data-theme="a" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
-            <div data-role="header" data-theme="a">
-                <h1>Notifikasi</h1>
-            </div>
-            <div role="main" class="ui-content" style="text-align: center;">
-                <p id="popupMessage">Mesej penapisan umur.</p>
-                <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Tutup</a>
-            </div>
+        <div data-role="footer">
+            <h4>Webiture Enterprise &copy; 2026</h4>
         </div>
 
     </div>
-
-    <script src="script.js"></script>
 
 </body>
 </html>
